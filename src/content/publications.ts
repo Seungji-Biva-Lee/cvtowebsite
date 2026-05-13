@@ -31,7 +31,7 @@ export const publications: Pub[] = [
     authors: 'Lee, Seungji, Seonju Kong, Solbi Jeon, Minkyung Oro, and Yukyung Lee.',
     year: '2024',
     title: 'We Want to Dance But Our Houses Are Too Small: The Story of Shanti-Khana, A Women\u2019s Community Space in a Rohingya Refugee Camp.',
-    venue: 'Asian Dignity Initiative.',
+    venue: 'Fascicles.',
     type: 'book',
   },
 
