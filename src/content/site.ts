@@ -37,8 +37,7 @@ export const siteConfig = {
 
   /** Navigation items. */
   nav: [
-    { label: 'Home', href: '/' },
-    { label: 'Research', href: '/research/' },
+    { label: 'Research', href: '/' },
     { label: 'Projects', href: '/projects/' },
     { label: 'CV', href: '/cv/' },
   ],

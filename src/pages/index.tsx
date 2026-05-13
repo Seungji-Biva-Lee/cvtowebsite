@@ -1,6 +1,8 @@
 import Layout from '@/components/Layout';
 import { siteConfig } from '@/content/site';
 import { cvData, currentPosition } from '@/content/cvGenerated';
+import { researchContent } from '@/content/research';
+import { publications, workInProgress } from '@/content/publications';
 import type { GetStaticProps } from 'next';
 import type { CvData } from '@/content/cvGenerated';
 
@@ -26,13 +28,9 @@ export default function Home({ cv }: HomeProps) {
             width={100}
             height={100}
             className="rounded-sm object-cover"
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = 'none';
-            }}
+            onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
-          <span className="text-[10px] text-gray-400 leading-tight text-center">
-            Photo by Hantol
-          </span>
+          <span className="text-[10px] text-gray-400 leading-tight text-center">Photo by Hantol</span>
         </div>
         <div>
           <h1 className="text-2xl font-semibold mb-1 text-sky-900">{displayName}</h1>
@@ -50,50 +48,67 @@ export default function Home({ cv }: HomeProps) {
         </div>
       </section>
 
-      {/* About */}
+      {/* Research overview */}
       <section className="mb-8">
-        <h2 className="text-base font-semibold mb-2 border-b border-sky-200 pb-1 text-sky-900">
-          About
-        </h2>
-        <p className="text-sm text-gray-700 leading-relaxed">
-          Dedicated humanitarian professional and emerging researcher with extensive field experience
-          in managing projects, fostering partnerships, and delivering results in complex refugee settings.
-          Currently pursuing a Master&rsquo;s degree in Political Science while conducting research on
-          refugee livelihoods and women&rsquo;s economic empowerment. Seeking to bridge humanitarian
-          practice and academic research to contribute evidence-based solutions for conflict-affected
-          communities worldwide.
-        </p>
+        <p className="text-gray-700 leading-relaxed text-sm">{researchContent.overview}</p>
       </section>
 
       {/* Research areas */}
-      {cv.researchAreas.length > 0 && (
+      {researchContent.strands.length > 0 && (
         <section className="mb-8">
-          <h2 className="text-base font-semibold mb-2 border-b border-sky-200 pb-1 text-sky-900">
+          <h2 className="text-base font-semibold mb-3 border-b border-sky-200 pb-1 text-sky-900">
             Research Areas
           </h2>
-          <p className="text-sm text-gray-700">{cv.researchAreas.join(' · ')}</p>
-          <p className="mt-3 text-sm">
-            <a href="/research/">Publications and work in progress →</a>
-          </p>
+          <div className="space-y-3">
+            {researchContent.strands.map((strand) => (
+              <div key={strand.title}>
+                <h3 className="font-medium text-gray-900 text-sm">{strand.title}</h3>
+                <p className="text-sm text-gray-600">{strand.description}</p>
+              </div>
+            ))}
+          </div>
         </section>
       )}
 
-      {/* Quick links */}
-      <section className="mt-10 grid grid-cols-3 gap-4 text-center text-sm">
-        {[
-          { label: 'Research', href: '/research/', desc: 'Publications & WIP' },
-          { label: 'Projects', href: '/projects/', desc: 'Field & research projects' },
-          { label: 'CV', href: '/cv/', desc: 'Full curriculum vitae' },
-        ].map((item) => (
-          <a
-            key={item.href}
-            href={item.href}
-            className="border border-sky-200 rounded-lg p-4 hover:border-sky-400 hover:bg-sky-50 no-underline transition-colors"
-          >
-            <div className="font-semibold text-sky-800">{item.label}</div>
-            <div className="text-gray-500 text-xs mt-1">{item.desc}</div>
-          </a>
-        ))}
+      {/* Work in progress */}
+      {workInProgress.length > 0 && (
+        <section className="mb-8">
+          <h2 className="text-base font-semibold mb-3 border-b border-sky-200 pb-1 text-sky-900">
+            Work in Progress
+          </h2>
+          <ul className="space-y-3">
+            {workInProgress.map((wip, i) => (
+              <li key={i} className="text-sm leading-relaxed text-gray-800">
+                {wip.authors} {wip.year}.{' '}
+                &ldquo;{wip.title}&rdquo;
+                {wip.venue && ` ${wip.venue}`}
+                {wip.note && (
+                  <span className="ml-2 text-xs bg-yellow-100 text-yellow-800 px-1.5 py-0.5 rounded">
+                    {wip.note}
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Publications */}
+      <section className="mb-8">
+        <h2 className="text-base font-semibold mb-3 border-b border-sky-200 pb-1 text-sky-900">
+          Publications
+        </h2>
+        <ul className="space-y-4">
+          {publications.map((pub, i) => (
+            <li key={i} className="text-sm leading-relaxed text-gray-800">
+              {pub.authors} {pub.year}.{' '}
+              {pub.type === 'book' ? <em>{pub.title}</em> : <>&ldquo;{pub.title}&rdquo;</>}{' '}
+              <span className="italic">{pub.venue}</span>
+              {pub.details && ` ${pub.details}`}
+              {pub.note && <span className="ml-1 text-gray-500 not-italic"> {pub.note}</span>}
+            </li>
+          ))}
+        </ul>
       </section>
     </Layout>
   );
