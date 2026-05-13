@@ -20,17 +20,16 @@ export default function Home({ cv }: HomeProps) {
     <Layout>
       {/* Bio block */}
       <section className="mb-10 flex gap-6 items-start">
-        <div className="flex-shrink-0 flex flex-col items-center gap-1">
+        <div className="flex-shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={siteConfig.headshotUrl}
             alt={displayName}
-            width={100}
-            height={100}
+            width={160}
+            height={160}
             className="rounded-sm object-cover"
             onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
           />
-          <span className="text-[10px] text-gray-400 leading-tight text-center">Photo by Hantol</span>
         </div>
         <div>
           <h1 className="text-2xl font-semibold mb-1 text-sky-900">{displayName}</h1>
