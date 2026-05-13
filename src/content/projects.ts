@@ -9,7 +9,6 @@ export interface Project {
   sector: 'Research' | 'Humanitarian Assistance' | 'Health' | 'Social Welfare';
   years: string;
   funder: string;
-  /** Optional highlight shown as a badge or note */
   highlight?: string;
 }
 
@@ -53,21 +52,21 @@ export const projects: Project[] = [
   {
     title: "Raw Medicine Supply for Children's Hospital in North Korea",
     country: 'North Korea',
-    sector: 'Health',
+    sector: 'Humanitarian Assistance',
     years: '2019',
     funder: 'Local Government',
   },
   {
     title: 'Healthcare Supplies to North Korea',
     country: 'North Korea',
-    sector: 'Health',
+    sector: 'Humanitarian Assistance',
     years: '2019',
     funder: 'Local Government',
   },
   {
     title: 'Finished Medicine Supply to North Korea',
     country: 'North Korea',
-    sector: 'Health',
+    sector: 'Humanitarian Assistance',
     years: '2018',
     funder: 'NGO Internal Project',
   },

@@ -8,9 +8,9 @@ export interface Pub {
   authors: string;
   year: string;
   title: string;
-  venue: string;       // journal, publisher, or platform
-  details?: string;    // volume/issue/pages or edition info
-  note?: string;       // e.g. "Under review", "Contributing author", language note
+  venue: string;
+  details?: string;
+  note?: string;
   type: 'article' | 'book' | 'report' | 'wip';
 }
 
@@ -28,7 +28,7 @@ export const publications: Pub[] = [
 
   // ── Books ──────────────────────────────────────────────────────────────
   {
-    authors: 'Lee, S., Kong, S., Jeon, S., Oro, M., and Lee, Y.',
+    authors: 'Lee, Seungji, Seonju Kong, Solbi Jeon, Minkyung Oro, and Yukyung Lee.',
     year: '2024',
     title: 'We Want to Dance But Our Houses Are Too Small: The Story of Shanti-Khana, A Women\u2019s Community Space in a Rohingya Refugee Camp.',
     venue: 'Asian Dignity Initiative.',
