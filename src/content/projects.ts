@@ -7,6 +7,7 @@ export interface Project {
   title: string;
   country: string;
   sector: 'Research' | 'Humanitarian Assistance' | 'Health' | 'Social Welfare';
+  tags?: string[];
   years: string;
   funder: string;
   highlight?: string;
@@ -31,6 +32,7 @@ export const projects: Project[] = [
     title: 'Psychosocial Support ODA Project for Rohingya Refugees in Bangladesh',
     country: 'Bangladesh',
     sector: 'Humanitarian Assistance',
+    tags: ['Psychosocial Support'],
     years: '2021–2024',
     funder: 'KOICA',
     highlight: 'KOICA External Evaluation: 19.5/20 — Grade A (Highly Successful)',
@@ -39,6 +41,7 @@ export const projects: Project[] = [
     title: "Rohingya Refugee Women's Livelihood Support Project in Bangladesh",
     country: 'Bangladesh',
     sector: 'Humanitarian Assistance',
+    tags: ['Livelihoods', 'Gender'],
     years: '2023–2024',
     funder: 'Jesuitenweltweit',
   },
@@ -53,6 +56,7 @@ export const projects: Project[] = [
     title: "Raw Medicine Supply for Children's Hospital in North Korea",
     country: 'North Korea',
     sector: 'Humanitarian Assistance',
+    tags: ['Health'],
     years: '2019',
     funder: 'Local Government',
   },
@@ -60,6 +64,7 @@ export const projects: Project[] = [
     title: 'Healthcare Supplies to North Korea',
     country: 'North Korea',
     sector: 'Humanitarian Assistance',
+    tags: ['Health'],
     years: '2019',
     funder: 'Local Government',
   },
@@ -67,6 +72,7 @@ export const projects: Project[] = [
     title: 'Finished Medicine Supply to North Korea',
     country: 'North Korea',
     sector: 'Humanitarian Assistance',
+    tags: ['Health'],
     years: '2018',
     funder: 'NGO Internal Project',
   },

@@ -37,6 +37,11 @@ export default function Projects() {
               >
                 {project.sector}
               </span>
+              {project.tags?.map((tag) => (
+                <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-sky-100 text-sky-700">
+                  {tag}
+                </span>
+              ))}
               <span className="text-xs px-2 py-0.5 rounded-full bg-gray-100 text-gray-700">
                 {project.country}
               </span>
