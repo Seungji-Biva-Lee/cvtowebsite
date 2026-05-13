@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #1a1a1a;
+    background-color: #f8fbff;
+  }
+  a {
+    @apply text-sky-600 hover:text-sky-800 hover:underline;
+  }
+}
