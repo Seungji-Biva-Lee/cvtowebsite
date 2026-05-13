@@ -32,7 +32,7 @@ export const projects: Project[] = [
     title: 'Psychosocial Support ODA Project for Rohingya Refugees in Bangladesh',
     country: 'Bangladesh',
     sector: 'Humanitarian Assistance',
-    tags: ['Psychosocial Support'],
+    tags: ['Psychosocial Support', 'Livelihoods', 'Gender'],
     years: '2021–2024',
     funder: 'KOICA',
     highlight: 'KOICA External Evaluation: 19.5/20 — Grade A (Highly Successful)',

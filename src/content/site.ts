@@ -19,7 +19,7 @@ export const siteConfig = {
   cvUrl: `${basePath}/cv.pdf`,
 
   /** Path to your profile photo (relative to /public). */
-  headshotUrl: `${basePath}/headshot.jpg`,
+  headshotUrl: `${basePath}/headshot.png`,
 
   /** GitHub Pages or custom domain URL (no trailing slash). */
   siteUrl: 'https://Seungji-Biva-Lee.github.io/cvtowebsite',
